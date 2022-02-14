@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Felix Weiland - Project 1</title>
+		<title>Felix Weiland - NFT Generator</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -39,17 +39,19 @@
 
 				<!-- Banner -->
 				<!-- Note: The "styleN" class below should match that of the header element. -->
-					<section id="banner" class="style1">
+					<section id="banner" class="style3">
 						<div class="inner">
 							<span class="image">
-								<img src="images/volvo.jpg" alt="" />
+								<img src="images/15.png" alt="" />
 							</span>
 							<header class="major">
-								<h1>Landing</h1>
+								<h1>NFT Generator Project</h1>
 							</header>
-							<div class="content">
-								<p>Lorem ipsum dolor sit amet nullam consequat<br />
-								sed veroeros. tempus adipiscing nulla.</p>
+							<div class="major">
+								<p>This was an image generator project that I created for creative friend of mine who was interested in NFT
+								She had just started out and was eager to create a big collection of images. I came up with the idea of making
+							    a image generator based on layers, that would combine them into unique pictures - as well as generating metadata
+							    for the smart contract and properties.</p>
 							</div>
 						</div>
 					</section>
@@ -61,23 +63,65 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h2>Sed amet aliquam</h2>
+										<h2>Background</h2>
 									</header>
 									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
 									<!-- Preformatted Code -->
 									<h3>Block of code</h3>
-									<pre><code>i = 0;
+									<pre><code>def create_new_image():
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+#Creating a placeholder dictionary
+new_image = {} 
+new_image[f"{1 + len(path_dictionary.keys())}. tokenId"] = delete_past+i
+new_image[f"{2 + len(path_dictionary.keys())}. background"] = random.choices(backgrounds)[0]
 
-print 'It took ' + i + ' iterations to sort the deck.';
-</code></pre>
+for key in path_dictionary.keys():
+
+	#Creating keys without the positioning numbers
+	new_image[key] = random.choices(path_dictionary[key], weights[key])[0]
+	
+#Return the dictionary if not already in all_images. This to prevet doubles. 
+if new_image not in all_images:
+	return new_image 
+
+#If the image already exists - run the function again.
+else:
+	return create_new_image()
+
+# Generate the unique combinations based on trait weightings and appending an unique ID
+for i in range(total_images):
+
+new_trait_image = create_new_image()
+all_images.append(new_trait_image)
+images_to_generate.append(new_trait_image)
+
+#Generating a random background.
+background = random.choices(backgrounds)[0]
+									</code></pre>
+
+									<!-- Two -->		
+									<header class="major">
+										<h2>Section 2</h2>
+									</header>
+									<p>test.</p>
+
+									<!-- Three -->		
+									<header class="major">
+										<h2>Section 3</h2>
+									</header>
+									<p>test.</p>
+
+									<!-- Four -->		
+									<header class="major">
+										<h4>Reference</h4>
+									</header>
+									<p>Find the whole project with code on my GitHub</p>
+
+
 								</div>
-							</section>
+						</section>
+
+							
 					</div>
 
 				<!-- Footer -->
