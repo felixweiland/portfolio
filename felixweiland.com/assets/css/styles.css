@@ -1,0 +1,339 @@
+/* --------------------------------------- Animation --------------------------------------- */
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* --------------------------------------- FOLD-OUTS --------------------------------------- */
+
+.contentz {
+  display: none;
+}
+
+.toggle-button {
+  background-color: #ddd;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.fold-out-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.fold-out-content--open {
+  padding: 20px;
+  transition: padding 0.3s ease-in-out;
+}
+
+.fold-out .visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.fold-out .fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fold-out-content.active {
+  max-height: 1000px; /* Replace with actual height of fold-out content */
+}
+
+.animate {
+  transition: 0.3s ease-out;
+}
+
+/* ---------------------------------------- Buttons ---------------------------------------- */
+
+.contact-linkedin {
+  margin-top: 9px;
+  margin-bottom: 20px;
+  width: 45px;
+  height: 45px;
+  background: url("../img/linkedin-up.svg") no-repeat center center / contain;
+  display: block;
+}
+
+.contact-linkedin:hover {
+  background: url("../img/linkedin-hover.svg") no-repeat center center / contain;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+.Aligner {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 80%;
+}
+
+.img-double {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* --------------------------------------- Page --------------------------------------- */
+
+.pageContent {
+  padding: 50px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------- <750px --------------------------------------- */
+
+@media only screen and (max-width: 750px) {
+  .toggle {
+    display: none;
+  }
+
+  .contact-linkedin {
+    margin-top: 0px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .row.double > [class*="col-"] {
+    margin: 0px;
+    width: 100%;
+  }
+
+  body h2 {
+    font-size: 38px;
+  }
+
+  .pageContent {
+    padding: 30px;
+  }
+}
+
+/* --------------------------------------- >1300px --------------------------------------- */
+
+@media only screen and (min-width: 1300px) {
+  body h2 {
+    font-size: 68px;
+  }
+
+  .contact-linkedin {
+    margin-top: 10px;
+    width: 68px;
+    height: 68px;
+  }
+
+  .contact-linkedin:hover {
+    background: url("../img/linkedin-hover.svg") no-repeat center center /
+      contain;
+  }
+}
+
+/*Only iPhone 5 (portrait mode)*/
+
+/* 
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) 
+  and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) {
+    .toggle {
+      display: none;
+    }
+  
+    .headline h2 {
+      font-size: 40px;
+      line-height: 38px;
+      letter-spacing: -1.5px;
+    }
+  
+    .headline {
+      padding: 0px;
+      left: 0px;
+    }
+  
+    .mobile {
+      display: block;   
+    }
+  
+    .row.double > [class*='col-'] {
+      margin: 0px;
+      width: 100%;
+    }
+  }
+  */
+
+/* --------------------------------------- Type --------------------------------------- */
+
+.mobile {
+  display: none;
+}
+
+body {
+  background-color: black;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  color: white;
+  letter-spacing: -0.3px;
+}
+
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: underline 0.08em #ffffff;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+h2 {
+  font-weight: 400;
+  margin-top: 0;
+  padding: 15px;
+  margin-bottom: 0;
+  display: inherit;
+  font-size: 50px;
+  letter-spacing: -0.02em;
+  line-height: 1.1em;
+}
+
+h3 {
+  font-weight: 400;
+  margin-top: 0;
+  padding: 15px;
+  margin-bottom: 0;
+  display: inherit;
+  font-size: 30px;
+}
+
+p {
+  margin: 0px;
+  line-height: 20px;
+}
+
+.entry {
+  margin: 40px;
+  padding-bottom: 40px;
+}
+
+/* --------------------------------------- Adjusters --------------------------------------- */
+
+.grey {
+  color: #434343;
+}
+
+.line {
+  border-top: 1px solid #555555;
+}
+
+.float- {
+  /* Define float direction or remove if not needed */
+  margin: 0px;
+}
+
+/* --------------------------------------- 12-12 GRID --------------------------------------- */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.row {
+  /* padding: 0 10px; */
+  zoom: 1;
+}
+
+.row::after,
+.row::before {
+  content: " ";
+  display: table;
+}
+
+.row::after {
+  clear: both;
+}
+
+.row > [class*="col-"]:first-child {
+  margin-left: 0;
+}
+
+.row > [class*="col-"]:last-child {
+  margin-right: 0;
+}
+
+.row > [class*="col-"] {
+  margin: 0 10px 0 0;
+}
+
+.row > [class*="col-"] iframe {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0px; /* Adjust as needed */
+}
+
+[class*="col-"] {
+  float: left;
+}
+
+/* Removed the invalid last-of-type padding */
+
+.col-1-12 {
+  width: 8.33%; /* 100% / 12 */
+}
+
+.col-2-12 {
+  width: 16.66%; /* 100% / 12 * 2 */
+}
+
+.col-3-12 {
+  width: 25%; /* 100% / 12 * 3 */
+}
+
+.col-4-12 {
+  width: 33.33%; /* 100% / 12 * 4 */
+}
+
+.col-5-12 {
+  width: 41.66%; /* 100% / 12 * 5 */
+}
+
+.col-6-12 {
+  width: 50%; /* 100% / 12 * 6 */
+}
+
+.col-7-12 {
+  width: 58.33%; /* 100% / 12 * 7 */
+}
+
+.col-8-12 {
+  width: 66.66%; /* 100% / 12 * 8 */
+}
+
+.col-9-12 {
+  width: 75%; /* 100% / 12 * 9 */
+}
+
+.col-10-12 {
+  width: 83.33%; /* 100% / 12 * 10 */
+}
+
+.col-11-12 {
+  width: 91.66%; /* 100% / 12 * 11 */
+}
+
+.col-12-12 {
+  width: 100%; /* 100% / 12 * 12 */
+}
